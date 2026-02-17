@@ -1,0 +1,18 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "clk" LOC = P123;
+NET "red" LOC = P24;
+NET "green" LOC = P22;
+NET "blue" LOC = P17;
+NET "hsync" LOC = P15;
+NET "vsync" LOC = P12;
+NET "reset" LOC = P66;
+NET "p1_action_inp[0]" LOC = P5;
+NET "p1_action_inp[1]" LOC = P7;
+NET "p2_action_inp[0]" LOC = P9;
+NET "p2_action_inp[1]" LOC = P11;
+NET "p1_action[0]" LOC = P67;
+NET "p1_action[1]" LOC = P74;
+NET "p2_action[0]" LOC = P75;
+NET "p2_action[1]" LOC = P78;

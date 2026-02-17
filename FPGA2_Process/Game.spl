@@ -1,0 +1,11 @@
+[Inputs]
+clk
+reset
+=p1_action[1:0]=
+=p2_action[1:0]=
+[Outputs]
+=p1_hp[3:0]=
+=p2_hp[3:0]=
+=winner[1:0]=
+=round[3:0]=
+[BiDir]

@@ -1,0 +1,1 @@
+sch2hdl,-sympath,/home/ise/Share_With_VM/FPGA2_Process/ipcore_dir,-intstyle,ise,-family,spartan6,-verilog,/home/ise/Share_With_VM/FPGA2_Process/Digital_Logic_Battle_Process.vf,-w,/home/ise/Share_With_VM/FPGA2_Process/Digital_Logic_Battle_Process.sch

@@ -1,0 +1,9 @@
+MODULE Digital_Logic_Battle_Process
+	SUBMODULE delay_3sec
+		INSTANCE XLXI_1
+	SUBMODULE Game
+		INSTANCE XLXI_2
+	SUBMODULE clk_20MHz_to_25MHz
+		INSTANCE XLXI_6
+	SUBMODULE vga_controller
+		INSTANCE XLXI_10

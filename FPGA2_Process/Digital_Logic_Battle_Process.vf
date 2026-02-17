@@ -1,0 +1,88 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Digital_Logic_Battle_Process.vf
+// /___/   /\     Timestamp : 11/09/2024 16:23:05
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -sympath /home/ise/Share_With_VM/FPGA2_Process/ipcore_dir -intstyle ise -family spartan6 -verilog /home/ise/Share_With_VM/FPGA2_Process/Digital_Logic_Battle_Process.vf -w /home/ise/Share_With_VM/FPGA2_Process/Digital_Logic_Battle_Process.sch
+//Design Name: Digital_Logic_Battle_Process
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Digital_Logic_Battle_Process(clk, 
+                                    p1_action_inp, 
+                                    p2_action_inp, 
+                                    reset, 
+                                    blue, 
+                                    green, 
+                                    hsync, 
+                                    p1_action, 
+                                    p2_action, 
+                                    red, 
+                                    vsync);
+
+    input clk;
+    input [1:0] p1_action_inp;
+    input [1:0] p2_action_inp;
+    input reset;
+   output blue;
+   output green;
+   output hsync;
+   output [1:0] p1_action;
+   output [1:0] p2_action;
+   output red;
+   output vsync;
+   
+   wire XLXN_1;
+   wire XLXN_11;
+   wire [3:0] XLXN_34;
+   wire [1:0] XLXN_35;
+   wire [3:0] XLXN_36;
+   wire [3:0] XLXN_37;
+   
+   delay_3sec  XLXI_1 (.clk(XLXN_11), 
+                      .p1_action(p1_action_inp[1:0]), 
+                      .p2_action(p2_action_inp[1:0]), 
+                      .delay_out(XLXN_1));
+   Game  XLXI_2 (.clk(XLXN_1), 
+                .p1_action(p1_action_inp[1:0]), 
+                .p2_action(p2_action_inp[1:0]), 
+                .reset(reset), 
+                .p1_hp(XLXN_37[3:0]), 
+                .p2_hp(XLXN_36[3:0]), 
+                .round(XLXN_34[3:0]), 
+                .winner(XLXN_35[1:0]));
+   clk_20MHz_to_25MHz  XLXI_6 (.clk_in(clk), 
+                              .clk_out(XLXN_11));
+   vga_controller  XLXI_10 (.clk_25MHz(XLXN_11), 
+                           .p1_act(p1_action_inp[1:0]), 
+                           .p1_hp(XLXN_37[3:0]), 
+                           .p2_act(p2_action_inp[1:0]), 
+                           .p2_hp(XLXN_36[3:0]), 
+                           .round_in(XLXN_34[3:0]), 
+                           .winner(XLXN_35[1:0]), 
+                           .blue(blue), 
+                           .green(green), 
+                           .hsync(hsync), 
+                           .red(red), 
+                           .vsync(vsync));
+   BUF  XLXI_20 (.I(p1_action_inp[0]), 
+                .O(p1_action[0]));
+   BUF  XLXI_21 (.I(p1_action_inp[1]), 
+                .O(p1_action[1]));
+   BUF  XLXI_24 (.I(p2_action_inp[0]), 
+                .O(p2_action[0]));
+   BUF  XLXI_25 (.I(p2_action_inp[1]), 
+                .O(p2_action[1]));
+endmodule

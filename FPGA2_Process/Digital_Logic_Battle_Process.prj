@@ -1,0 +1,6 @@
+verilog work "ipcore_dir/clk_wizard.v"
+vhdl work "VGA_Controller.vhd"
+vhdl work "delay_3sec.vhd"
+vhdl work "clk20MHz_to_25MHz.vhd"
+vhdl work "Action_Handler.vhd"
+verilog work "Digital_Logic_Battle_Process.vf"
