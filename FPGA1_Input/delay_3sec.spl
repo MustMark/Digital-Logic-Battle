@@ -1,0 +1,7 @@
+[Inputs]
+clk
+=p1_action[1:0]=
+=p2_action[1:0]=
+[Outputs]
+delay_out
+[BiDir]

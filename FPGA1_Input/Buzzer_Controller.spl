@@ -1,0 +1,6 @@
+[Inputs]
+clk
+=action[1:0]=
+[Outputs]
+buzzer
+[BiDir]

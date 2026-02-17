@@ -1,0 +1,15 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "clk" LOC = P123;
+NET "p2_btn[0]" LOC = P23;
+NET "p2_btn[1]" LOC = P21;
+NET "p2_btn[2]" LOC = P16;
+NET "p1_btn[0]" LOC = P1;
+NET "p1_btn[1]" LOC = P142;
+NET "p1_btn[2]" LOC = P140;
+NET "p1_action[0]" LOC = P114;
+NET "p1_action[1]" LOC = P115;
+NET "p2_action[0]" LOC = P116;
+NET "p2_action[1]" LOC = P117;
+NET "buzzer" LOC = P83;

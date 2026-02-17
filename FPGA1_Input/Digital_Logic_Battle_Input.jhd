@@ -1,0 +1,11 @@
+MODULE Digital_Logic_Battle_Input
+	SUBMODULE Action_Selector
+		INSTANCE XLXI_1
+	SUBMODULE Action_Selector
+		INSTANCE XLXI_2
+	SUBMODULE Action_reset
+		INSTANCE XLXI_10
+	SUBMODULE Buzzer_Controller
+		INSTANCE XLXI_56
+	SUBMODULE Buzzer_Controller
+		INSTANCE XLXI_57

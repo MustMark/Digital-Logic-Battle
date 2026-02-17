@@ -1,0 +1,41 @@
+# Xilinx ISE project files
+*.xise
+*.gise
+*.ise
+*.ncd
+*.ngc
+*.ngd
+*.bgn
+*.bld
+*.cmd_log
+*.drc
+*.lso
+*.map
+*.mrp
+*.ngm
+*.pad
+*.par
+*.pcf
+*.ptwx
+*.rbt
+*.twr
+*.twx
+*.xpi
+*.xrpt
+*.xwbt
+*.xwbtf
+*.xmsgs
+*.log
+*.jou
+
+# Simulation
+*.wdb
+*.vcd
+*.wcfg
+
+# Auto generated folders
+_ngo/
+_xmsgs/
+iseconfig/
+xst/
+tmp/

@@ -1,0 +1,88 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Digital_Logic_Battle_Input.vf
+// /___/   /\     Timestamp : 11/10/2024 16:51:55
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog /home/ise/Share_With_VM/BACKUP_FPGA1_3SEC/Digital_Logic_Battle_Input.vf -w /home/ise/Share_With_VM/BACKUP_FPGA1_3SEC/Digital_Logic_Battle_Input.sch
+//Design Name: Digital_Logic_Battle_Input
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Digital_Logic_Battle_Input(clk, 
+                                  p1_btn, 
+                                  p2_btn, 
+                                  buzzer, 
+                                  p1_action, 
+                                  p2_action);
+
+    input clk;
+    input [2:0] p1_btn;
+    input [2:0] p2_btn;
+   output buzzer;
+   output [1:0] p1_action;
+   output [1:0] p2_action;
+   
+   wire reset;
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_5;
+   wire XLXN_6;
+   wire XLXN_130;
+   wire XLXN_131;
+   wire [1:0] p2_action_DUMMY;
+   wire [1:0] p1_action_DUMMY;
+   
+   assign p1_action[1:0] = p1_action_DUMMY[1:0];
+   assign p2_action[1:0] = p2_action_DUMMY[1:0];
+   Action_Selector  XLXI_1 (.A_btn(XLXN_1), 
+                           .C_btn(XLXN_3), 
+                           .L_btn(XLXN_2), 
+                           .reset(reset), 
+                           .D0(p1_action_DUMMY[0]), 
+                           .D1(p1_action_DUMMY[1]));
+   Action_Selector  XLXI_2 (.A_btn(XLXN_6), 
+                           .C_btn(XLXN_4), 
+                           .L_btn(XLXN_5), 
+                           .reset(reset), 
+                           .D0(p2_action_DUMMY[0]), 
+                           .D1(p2_action_DUMMY[1]));
+   INV  XLXI_4 (.I(p1_btn[0]), 
+               .O(XLXN_1));
+   INV  XLXI_5 (.I(p1_btn[2]), 
+               .O(XLXN_2));
+   INV  XLXI_6 (.I(p1_btn[1]), 
+               .O(XLXN_3));
+   INV  XLXI_7 (.I(p2_btn[1]), 
+               .O(XLXN_4));
+   INV  XLXI_8 (.I(p2_btn[2]), 
+               .O(XLXN_5));
+   INV  XLXI_9 (.I(p2_btn[0]), 
+               .O(XLXN_6));
+   Action_reset  XLXI_10 (.clk(clk), 
+                         .p1_action(p1_action_DUMMY[1:0]), 
+                         .p2_action(p2_action_DUMMY[1:0]), 
+                         .delay_out(reset));
+   Buzzer_Controller  XLXI_56 (.action(p1_action_DUMMY[1:0]), 
+                              .clk(clk), 
+                              .buzzer(XLXN_130));
+   Buzzer_Controller  XLXI_57 (.action(p2_action_DUMMY[1:0]), 
+                              .clk(clk), 
+                              .buzzer(XLXN_131));
+   OR2  XLXI_58 (.I0(XLXN_131), 
+                .I1(XLXN_130), 
+                .O(buzzer));
+endmodule

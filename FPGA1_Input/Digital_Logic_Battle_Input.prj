@@ -1,0 +1,4 @@
+verilog work "Action_Selector.vf"
+vhdl work "Buzzer_Controller.vhd"
+vhdl work "Action_Reset.vhd"
+verilog work "Digital_Logic_Battle_Input.vf"

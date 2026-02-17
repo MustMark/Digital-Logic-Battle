@@ -1,0 +1,76 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Action_Selector.vf
+// /___/   /\     Timestamp : 11/09/2024 11:58:20
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog /home/ise/Share_With_VM/BACKUP_FPGA1_3SEC/Action_Selector.vf -w /home/ise/Share_With_VM/backup_project_auto_reset/Action_Selector.sch
+//Design Name: Action_Selector
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Action_Selector(A_btn, 
+                       C_btn, 
+                       L_btn, 
+                       reset, 
+                       D0, 
+                       D1);
+
+    input A_btn;
+    input C_btn;
+    input L_btn;
+    input reset;
+   output D0;
+   output D1;
+   
+   wire A;
+   wire C;
+   wire L;
+   wire XLXN_9;
+   wire XLXN_12;
+   wire XLXN_13;
+   wire D0_DUMMY;
+   wire D1_DUMMY;
+   
+   assign D0 = D0_DUMMY;
+   assign D1 = D1_DUMMY;
+   FDC  XLXI_1 (.C(XLXN_9), 
+               .CLR(reset), 
+               .D(A_btn), 
+               .Q(A));
+   FDC  XLXI_3 (.C(XLXN_9), 
+               .CLR(reset), 
+               .D(C_btn), 
+               .Q(C));
+   FDC  XLXI_5 (.C(XLXN_9), 
+               .CLR(reset), 
+               .D(L_btn), 
+               .Q(L));
+   OR3  XLXI_7 (.I0(A_btn), 
+               .I1(C_btn), 
+               .I2(L_btn), 
+               .O(XLXN_12));
+   OR2  XLXI_13 (.I0(L), 
+                .I1(C), 
+                .O(D1_DUMMY));
+   OR2  XLXI_14 (.I0(L), 
+                .I1(A), 
+                .O(D0_DUMMY));
+   OR2  XLXI_15 (.I0(D0_DUMMY), 
+                .I1(D1_DUMMY), 
+                .O(XLXN_13));
+   AND2B1  XLXI_17 (.I0(XLXN_13), 
+                   .I1(XLXN_12), 
+                   .O(XLXN_9));
+endmodule
